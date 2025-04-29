@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;/* makes sure padding and border are included in the width and height of elements */ 
+
+    
+}
+body{
+    font-family: 'Muli', sans-serif;
+    display : flex; puts everything in a row goes horizontal
+    flex-direction: column; /* puts everything in a column goes vertical */
+    align-items: center; /* centers everything horizontally */
+    justify-content: center; /* centers everything vertically */
+    height: 100vh; /* makes the body take up the whole screen */
+    overflow: hidden; /* hides the scroll bar */
+    margin:0;
+
+}
+
+.container{
+    display: flex; /* makes everything in a row */
+    width:90vw; /* makes the container take up 90% of the screen width */
+    
+}
+
+.panel{
+    background-size: auto 100%; /* makes the background image take up the whole width and height of the element */
+    background-position: center; /* centers the background image */
+    background-repeat: no-repeat; /* makes sure the background image does not repeat */
+    height:80vh; /* makes the panel take up 80% of the screen height */
+    border-radius: 50px; /* rounds the corners of the panel */
+    color:#fbfafa; /* makes the text white */
+    cursor: pointer; /* makes the cursor a pointer when hovering over the panel */
+    flex : 0.5; /* makes the panel take up 50% of the container width using js change to 50 */
+    margin: 10px; /* adds a margin of 10px around the panel */
+    position: relative; /* makes the panel position relative to its parent */
+    transition: flex 0.7s ease-in-out; /* makes the panel expand and contract smoothly */
+
+}
+
+.panel h3 {
+     font-size:24px; /* makes the font size 24px */
+     position: absolute; /* makes the text position absolute to the panel */
+     bottom: 20px; /* positions the text 20px from the bottom of the panel */
+     left: 20px; /* positions the text 20px from the left of the panel */
+     margin:20px; /* removes the margin from the text */
+     opacity:0; /* makes the text invisible */
+
+}
+
+.panel.active{
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1; /* makes the text visible */
+    transition: opacity 0.3s ease-in 0.4s; /* makes the text fade in smoothly */
+}
+
+@media(max-width: 480px){
+    .container{
+        flex-direction: column; /* makes the container take up the whole screen width */
+        width: 100vw; /* makes the container take up 100% of the screen width */
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(3){
+        display: none; /* hides the 4th and 5th panels on small screens */
+    }
+
+}
