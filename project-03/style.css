@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;/* makes sure padding and border are included in the width and height of elements */ 
+
+    
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: #333; /* light grey background */
+    color: #222; /* dark grey text */
+    overflow -x : hidden; /* hides the scroll bar */
+    margin:0;
+}}
+
+.container{
+    background-color: #fafafa; /* white background */
+    transform-origin:top left; /* sets the origin of the rotation to the top left corner */
+    transition : transform 0.5s linear; /* smooth transition for the rotation */
+    width:100vh; /* sets the width of the container to 100vh */
+    min-height: 100vh; /* sets the minimum height of the container to 100vh */
+    padding:50px; /* adds padding to the container */  
+}
+
+.container.show-nav{
+    transform: rotate(-20deg); /* rotates the container to the left */
+} 
+
+.circle-container{
+    position:fixed; /* fixes the position of the circle container */
+    top: -100px; /* sets the top position of the circle container to -100px */
+    left:-100px; /* sets the left position of the circle container to 100px */  
+
+}
+
+.circle{
+    background-color: #ff7979; /* pink background */
+    height: 200px; /* sets the height of the circle to 200px */
+    width: 200px; /* sets the width of the circle to 200px */
+    border-radius: 50%; /* makes the circle round */
+    position: relative ; /* positions the circle absolutely within the circle container */
+    transition: transform 0.5s linear; /* smooth transition for the rotation */  
+}
+
+.circle button{
+    cursor: pointer
+    position: absolute; /* rotates the circle when hovered over */
+    top: 50%; /* sets the top position of the button to 50% of the circle */
+    left: 50%; /* sets the left position of the button to 50% of the circle */
+    height: 100px; /* sets the height of the button to 100px */
+    background: transparent; /* makes the background of the button transparent */
+    border:0;
+    font-size: 26px; /* sets the font size of the button to 26px */
+    color: #fff; /* sets the text color of the button to white */
+}
+
+.circle button:focus{
+    outline: none; /* changes the cursor to a pointer when hovering over the button */
+    transform: scale(1.2); /* scales the button to 1.2 times its original size when hovered over */
+}
+
+.circle button#open{
+    left: 60%; /* sets the left position of the open button to 60% of the circle */
+
+}
+
+.circle button#close{
+    top: 60%; /* sets the top position of the close button to 60% of the circle */
+    transform: rotate(90deg); /* rotates the close button to 90 degrees */  
+    transform-origin: top left; /* sets the origin of the rotation to the top left corner */
+}
+
+.content img{
+    max: width 100%; /* sets the maximum width of the image to 100% */
+}
