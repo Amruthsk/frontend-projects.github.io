@@ -1,4 +1,4 @@
-# Project 06: 
+# Project 06: Blurimage Loading
 
 ## Description
 .
