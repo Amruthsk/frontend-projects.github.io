@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+wght@0,100..900;1,100..900&display=swap');
+
+*{
+    box-sizing: border-box;/* makes sure padding and border are included in the width and height of elements */ 
+
+    
+}
+body{
+    background-color: #efedd6;
+    font-family: 'Roboto', sans-serif;
+    display : flex; /* puts everything in a row goes horizontal */
+    flex-direction: column; /* puts everything in a column goes vertical */
+    align-items: center; /* centers everything horizontally */
+    justify-content: center; /* centers everything vertically */
+    margin:0;
+
+}
+
+h1{
+    margin: 10px;
+}
+
+.box{
+    bacground-color:steelblue;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even){
+    transform: translateX(-200%);
+}
+
+.box.show{
+    transform: translateX(0);
+
+}    
+
+.box h2{
+    font-size: 45px;
+}
